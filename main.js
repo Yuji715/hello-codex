@@ -1,8 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const button = document.getElementById('greet-btn');
-  if (button) {
+  const input = document.getElementById('name-input');
+  if (button && input) {
     button.addEventListener('click', () => {
-      alert('こんにちは、Codex!');
+      const name = input.value.trim();
+      if (name === '') {
+        alert('名前を入力してください');
+      } else {
+        alert(`こんにちは、${name}さん！`);
+      }
     });
   }
 });
